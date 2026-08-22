@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: edubridge-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: edubridge
+      POSTGRES_PASSWORD: edubridge
+      POSTGRES_DB: edubridge
+    ports:
+      - "5432:5432"
+    volumes:
+      - edubridge_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U edubridge"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: edubridge-backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://edubridge:edubridge@db:5432/edubridge
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-this-super-secret-key-in-production}
+      JWT_ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 1440
+      AI_PROVIDER: ${AI_PROVIDER:-anthropic}
+      AI_API_KEY: ${AI_API_KEY:-}
+      AI_MODEL: ${AI_MODEL:-claude-sonnet-4-6}
+      APP_ENV: production
+      CORS_ORIGINS: http://localhost:8000
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "python scripts/seed_database.py && uvicorn backend.main:app --host 0.0.0.0 --port 8000"
+
+volumes:
+  edubridge_pgdata:

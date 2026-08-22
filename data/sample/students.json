@@ -1,0 +1,13 @@
+[
+  {"name": "Demo Student", "email": "student@example.com", "grade_level": "Grade 10"},
+  {"name": "Aditi Sharma", "email": "aditi.sharma@example.com", "grade_level": "Grade 10"},
+  {"name": "Rahul Verma", "email": "rahul.verma@example.com", "grade_level": "Grade 10"},
+  {"name": "Priya Nair", "email": "priya.nair@example.com", "grade_level": "Grade 10"},
+  {"name": "Karan Mehta", "email": "karan.mehta@example.com", "grade_level": "Grade 10"},
+  {"name": "Sneha Iyer", "email": "sneha.iyer@example.com", "grade_level": "Grade 10"},
+  {"name": "Arjun Rao", "email": "arjun.rao@example.com", "grade_level": "Grade 10"},
+  {"name": "Neha Gupta", "email": "neha.gupta@example.com", "grade_level": "Grade 10"},
+  {"name": "Vikram Singh", "email": "vikram.singh@example.com", "grade_level": "Grade 10"},
+  {"name": "Ananya Das", "email": "ananya.das@example.com", "grade_level": "Grade 10"},
+  {"name": "Rohan Kapoor", "email": "rohan.kapoor@example.com", "grade_level": "Grade 10"}
+]

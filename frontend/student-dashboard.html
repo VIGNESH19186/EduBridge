@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — EduBridge AI</title>
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/dashboard.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-logo">EduBridge AI</span>
+  <button class="topbar-toggle" aria-label="Open menu">☰</button>
+</div>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-logo">Edu<span>Bridge</span></div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html" class="sidebar-link active">📊 Dashboard</a>
+      <a href="/doubt-solver.html" class="sidebar-link">💬 Ask AI</a>
+      <a href="/practice.html" class="sidebar-link">📝 Practice</a>
+      <a href="/analytics.html" class="sidebar-link">📈 Progress</a>
+      <a href="/student-dashboard.html#recommendations" class="sidebar-link">🎯 Recommendations</a>
+      <a href="/doubt-solver.html#history" class="sidebar-link">🕘 History</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebar-avatar">S</div>
+        <div>
+          <div class="sidebar-user-name" id="sidebar-user-name">Student</div>
+          <div class="sidebar-user-role" id="sidebar-user-role">Student</div>
+        </div>
+      </div>
+      <a href="#" id="logout-btn" class="sidebar-link mt-4">🚪 Log Out</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="section-header">
+      <div>
+        <h2 id="greeting">Good Morning 👋</h2>
+        <p class="mb-0">Continue where you left off.</p>
+      </div>
+      <a href="/doubt-solver.html" class="btn btn-accent">Ask AI</a>
+    </div>
+
+    <div id="stats-loading" class="stat-grid">
+      <div class="skeleton" style="height:100px;"></div>
+      <div class="skeleton" style="height:100px;"></div>
+      <div class="skeleton" style="height:100px;"></div>
+      <div class="skeleton" style="height:100px;"></div>
+    </div>
+    <div id="stats-grid" class="stat-grid hidden"></div>
+
+    <section class="mt-6">
+      <h3>Your Weak Topics</h3>
+      <div id="weak-topics-loading" class="card">
+        <div class="skeleton" style="height:20px; margin-bottom:14px;"></div>
+        <div class="skeleton" style="height:20px; margin-bottom:14px;"></div>
+        <div class="skeleton" style="height:20px;"></div>
+      </div>
+      <div id="weak-topics" class="card hidden"></div>
+    </section>
+
+    <section class="mt-6" id="recommendations">
+      <div class="section-header">
+        <h3 class="mb-0">Recommended For You</h3>
+      </div>
+      <div id="recommendations-loading">
+        <div class="skeleton" style="height:70px; margin-bottom:12px;"></div>
+        <div class="skeleton" style="height:70px; margin-bottom:12px;"></div>
+      </div>
+      <div id="recommendations-list" class="hidden"></div>
+    </section>
+  </main>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

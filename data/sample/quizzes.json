@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Quadratic Equations - Practice Quiz",
+    "subject": "Mathematics",
+    "topic": "Quadratic Equations",
+    "difficulty": "beginner",
+    "time_limit_minutes": 15
+  },
+  {
+    "title": "Newton's Laws - Quick Quiz",
+    "subject": "Physics",
+    "topic": "Newton's Laws of Motion",
+    "difficulty": "beginner",
+    "time_limit_minutes": 10
+  }
+]

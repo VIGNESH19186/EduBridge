@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Knowledge Base — EduBridge AI</title>
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/dashboard.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-logo">EduBridge AI</span>
+  <button class="topbar-toggle" aria-label="Open menu">☰</button>
+</div>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-logo">Edu<span>Bridge</span></div>
+    <nav class="sidebar-nav" id="nav-links"></nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebar-avatar">U</div>
+        <div>
+          <div class="sidebar-user-name" id="sidebar-user-name">User</div>
+          <div class="sidebar-user-role" id="sidebar-user-role">Role</div>
+        </div>
+      </div>
+      <a href="#" id="logout-btn" class="sidebar-link mt-4">🚪 Log Out</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="section-header">
+      <h2 class="mb-0">Knowledge Base</h2>
+    </div>
+
+    <div class="card" id="upload-card">
+      <h4>Upload Educational Resource</h4>
+      <form id="upload-form">
+        <div class="field">
+          <label for="file-input">File (PDF, TXT, or MD)</label>
+          <input type="file" id="file-input" name="file" accept=".pdf,.txt,.md" required />
+        </div>
+        <div class="flex gap-4" style="flex-wrap:wrap;">
+          <div class="field" style="flex:1; min-width:180px;">
+            <label for="subject-input">Subject</label>
+            <input type="text" id="subject-input" required placeholder="Mathematics" />
+          </div>
+          <div class="field" style="flex:1; min-width:180px;">
+            <label for="topic-input">Topic</label>
+            <input type="text" id="topic-input" required placeholder="Quadratic Equations" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="title-input">Title</label>
+          <input type="text" id="title-input" required placeholder="Algebra Fundamentals" />
+        </div>
+        <div class="flex gap-4" style="flex-wrap:wrap;">
+          <div class="field" style="flex:1; min-width:180px;">
+            <label for="author-input">Author</label>
+            <input type="text" id="author-input" placeholder="Author name" />
+          </div>
+          <div class="field" style="flex:1; min-width:180px;">
+            <label for="url-input">Source URL</label>
+            <input type="text" id="url-input" placeholder="https://..." />
+          </div>
+        </div>
+        <div class="field">
+          <label for="license-input">License</label>
+          <input type="text" id="license-input" value="Open Educational Resource" />
+        </div>
+        <button type="submit" class="btn btn-accent">Add Resource</button>
+      </form>
+      <p id="upload-status" class="text-sm mt-4"></p>
+    </div>
+
+    <section class="mt-6">
+      <h3>Resources by Subject</h3>
+      <div id="resources-loading" class="stat-grid">
+        <div class="skeleton" style="height:80px;"></div>
+        <div class="skeleton" style="height:80px;"></div>
+        <div class="skeleton" style="height:80px;"></div>
+      </div>
+      <div id="resources-grid" class="stat-grid hidden"></div>
+    </section>
+
+    <section class="mt-6">
+      <h3>Search Knowledge Base</h3>
+      <div class="card">
+        <div class="flex gap-3">
+          <input type="text" id="search-input" placeholder="e.g. Newton's laws" style="flex:1; padding:12px 14px; border-radius:8px; border:1.5px solid var(--border-subtle);" />
+          <button class="btn btn-primary" id="search-btn">Search</button>
+        </div>
+        <div id="search-results" class="mt-4"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/knowledge-base.js"></script>
+</body>
+</html>

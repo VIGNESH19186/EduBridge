@@ -1,0 +1,16 @@
+[
+  {
+    "topic": "Quadratic Equations",
+    "prompt": "Solve: x² - 5x + 6 = 0",
+    "options": ["1, 6", "2, 3", "3, 4", "2, 4"],
+    "correct_answer": "2, 3",
+    "difficulty": "beginner"
+  },
+  {
+    "topic": "Differential Calculus",
+    "prompt": "What is the derivative of x³?",
+    "options": ["3x²", "x²", "3x", "x³"],
+    "correct_answer": "3x²",
+    "difficulty": "beginner"
+  }
+]

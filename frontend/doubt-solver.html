@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ask AI — EduBridge AI</title>
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/dashboard.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-logo">EduBridge AI</span>
+  <button class="topbar-toggle" aria-label="Open menu">☰</button>
+</div>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-logo">Edu<span>Bridge</span></div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html" class="sidebar-link">📊 Dashboard</a>
+      <a href="/doubt-solver.html" class="sidebar-link active">💬 Ask AI</a>
+      <a href="/practice.html" class="sidebar-link">📝 Practice</a>
+      <a href="/analytics.html" class="sidebar-link">📈 Progress</a>
+      <a href="/student-dashboard.html#recommendations" class="sidebar-link">🎯 Recommendations</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebar-avatar">S</div>
+        <div>
+          <div class="sidebar-user-name" id="sidebar-user-name">Student</div>
+          <div class="sidebar-user-role" id="sidebar-user-role">Student</div>
+        </div>
+      </div>
+      <a href="#" id="logout-btn" class="sidebar-link mt-4">🚪 Log Out</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="section-header">
+      <h2 class="mb-0">Ask AI</h2>
+    </div>
+
+    <div class="doubt-layout">
+      <div class="doubt-panel card">
+        <div class="field">
+          <label for="subject-select">Subject</label>
+          <select id="subject-select">
+            <option value="">Auto-detect</option>
+            <option>Mathematics</option>
+            <option>Physics</option>
+            <option>Chemistry</option>
+            <option>Biology</option>
+            <option>Computer Science</option>
+            <option>English</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="level-select">Difficulty</label>
+          <select id="level-select">
+            <option value="simpler">Simpler</option>
+            <option value="intermediate" selected>Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
+        <div class="field mb-0">
+          <label for="language-select">Language</label>
+          <select id="language-select"></select>
+        </div>
+      </div>
+
+      <div class="chat-window">
+        <div class="chat-messages" id="chat-messages">
+          <div class="chat-empty" id="chat-empty">
+            <div class="state-icon">💬</div>
+            <h4>Ask anything...</h4>
+            <p class="mb-0 text-sm">e.g. "Why does differentiation of x² become 2x?"</p>
+          </div>
+        </div>
+        <div class="chat-input-bar">
+          <textarea id="doubt-input" placeholder="Ask anything..." rows="1"></textarea>
+          <button id="send-btn" class="btn btn-accent">Ask</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/language.js"></script>
+<script src="/js/doubt-solver.js"></script>
+</body>
+</html>

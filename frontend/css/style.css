@@ -1,0 +1,290 @@
+/* ==========================================================================
+   EduBridge AI — Design System
+   Palette: "Ink & Growth" — deep indigo ink, emerald growth, warm insight gold
+   Type: Fraunces (display) + Inter (body/UI) + JetBrains Mono (data)
+   Signature element: the "confidence ring" — a circular progress ring used
+   consistently for mastery %, subject progress, and streaks.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Color tokens */
+  --ink-900: #171B33;
+  --ink-800: #1B2340;
+  --ink-700: #2A3358;
+  --ink-500: #545E86;
+  --ink-300: #A7ADC9;
+  --paper-0: #FCFCFD;
+  --paper-100: #F5F6FA;
+  --paper-200: #EAECF4;
+
+  --growth-600: #0B7D72;
+  --growth-500: #0F9B8E;
+  --growth-100: #DCF3EF;
+
+  --insight-600: #C9821F;
+  --insight-500: #E8A33D;
+  --insight-100: #FBEAD2;
+
+  --danger-600: #C6403A;
+  --danger-100: #FBE2E0;
+
+  --text-primary: #1B2340;
+  --text-secondary: #545E86;
+  --text-muted: #8890AC;
+  --border-subtle: #E4E6EF;
+
+  /* Type scale */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Radius & shadow */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 1px 2px rgba(23, 27, 51, 0.06), 0 1px 1px rgba(23, 27, 51, 0.04);
+  --shadow-md: 0 4px 16px rgba(23, 27, 51, 0.08);
+  --shadow-lg: 0 12px 32px rgba(23, 27, 51, 0.12);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--paper-100);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink-900);
+  margin: 0 0 var(--space-3);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); }
+h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.1rem; }
+
+p { margin: 0 0 var(--space-4); color: var(--text-secondary); }
+
+a { color: var(--growth-600); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button { font-family: var(--font-body); cursor: pointer; }
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn:focus-visible {
+  outline: 2px solid var(--growth-500);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--ink-800);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover { background: var(--ink-900); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+.btn-accent {
+  background: var(--growth-500);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+.btn-accent:hover { background: var(--growth-600); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border-subtle);
+  color: var(--ink-800);
+}
+.btn-outline:hover { background: var(--paper-200); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-700);
+  padding: 10px 16px;
+}
+.btn-ghost:hover { background: var(--paper-200); }
+
+.btn-sm { padding: 8px 16px; font-size: 0.85rem; }
+.btn-block { width: 100%; }
+
+/* Cards */
+.card {
+  background: var(--paper-0);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.card-flat {
+  background: var(--paper-0);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--growth-600);
+  background: var(--growth-100);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.badge-high { background: var(--danger-100); color: var(--danger-600); }
+.badge-medium { background: var(--insight-100); color: var(--insight-600); }
+.badge-low { background: var(--growth-100); color: var(--growth-600); }
+
+/* Inputs */
+.field { margin-bottom: var(--space-4); }
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  margin-bottom: var(--space-2);
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-subtle);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background: var(--paper-0);
+  color: var(--text-primary);
+  transition: border-color 0.15s ease;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--growth-500);
+}
+.field-error { color: var(--danger-600); font-size: 0.82rem; margin-top: 4px; display: none; }
+
+/* Signature element: the confidence ring */
+.confidence-ring { position: relative; display: inline-flex; align-items: center; justify-content: center; }
+.confidence-ring svg { transform: rotate(-90deg); }
+.confidence-ring .ring-bg { fill: none; stroke: var(--paper-200); }
+.confidence-ring .ring-fg { fill: none; stroke: var(--growth-500); stroke-linecap: round; transition: stroke-dashoffset 0.6s ease; }
+.confidence-ring .ring-label {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+/* States */
+.state-block {
+  text-align: center;
+  padding: var(--space-7) var(--space-5);
+  color: var(--text-muted);
+}
+.state-block .state-icon { font-size: 2.2rem; margin-bottom: var(--space-3); }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--paper-200) 25%, var(--paper-100) 37%, var(--paper-200) 63%);
+  background-size: 400% 100%;
+  animation: skeleton-loading 1.4s ease infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes skeleton-loading {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink-900);
+  color: white;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.9rem;
+  z-index: 999;
+  max-width: 320px;
+}
+.toast.toast-error { background: var(--danger-600); }
+.toast.toast-success { background: var(--growth-600); }
+
+/* Focus visibility (accessibility) */
+:focus-visible { outline: 2px solid var(--growth-500); outline-offset: 2px; }
+
+/* Utility */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mb-0 { margin-bottom: 0; }
+.text-muted { color: var(--text-muted); }
+.text-sm { font-size: 0.85rem; }
+.font-mono { font-family: var(--font-mono); }
+.hidden { display: none !important; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

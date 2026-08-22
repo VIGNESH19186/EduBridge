@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Create Account — EduBridge AI</title>
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+<div class="auth-shell">
+  <div class="auth-card card">
+    <div class="auth-logo">
+      <div class="nav-logo">Edu<span>Bridge</span> AI</div>
+      <p class="text-sm mt-2">Create your account to get started.</p>
+    </div>
+
+    <div class="auth-tabs" role="tablist">
+      <button type="button" class="auth-tab active" data-role="student">Student</button>
+      <button type="button" class="auth-tab" data-role="teacher">Teacher</button>
+    </div>
+
+    <form id="register-form" novalidate>
+      <div class="field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name" />
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required minlength="6" placeholder="At least 6 characters" />
+      </div>
+      <button type="submit" class="btn btn-accent btn-block">Create Account</button>
+    </form>
+
+    <p class="text-sm mt-4" style="text-align:center;">
+      Already have an account? <a href="/login.html">Sign in</a>
+    </p>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script>
+  // Preselect teacher tab if linked with ?role=teacher
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("role") === "teacher") {
+    document.querySelectorAll(".auth-tab").forEach((t) => t.classList.remove("active"));
+    document.querySelector('.auth-tab[data-role="teacher"]').classList.add("active");
+  }
+</script>
+</body>
+</html>

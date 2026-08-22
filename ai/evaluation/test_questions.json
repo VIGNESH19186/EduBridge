@@ -1,0 +1,27 @@
+[
+  {
+    "question": "Why does differentiation of x squared become 2x?",
+    "expected_subject": "Mathematics",
+    "expected_topic": "Differential Calculus"
+  },
+  {
+    "question": "What is Newton's second law of motion?",
+    "expected_subject": "Physics",
+    "expected_topic": "Newton's Laws of Motion"
+  },
+  {
+    "question": "How do I simplify a fraction like 8/12?",
+    "expected_subject": "Mathematics",
+    "expected_topic": "Fractions"
+  },
+  {
+    "question": "What gas do plants release during photosynthesis?",
+    "expected_subject": "Biology",
+    "expected_topic": "Photosynthesis"
+  },
+  {
+    "question": "What is the time complexity of a for loop over n items?",
+    "expected_subject": "Computer Science",
+    "expected_topic": "Algorithms & Control Flow"
+  }
+]

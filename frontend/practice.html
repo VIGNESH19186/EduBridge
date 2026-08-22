@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Practice — EduBridge AI</title>
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/dashboard.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-logo">EduBridge AI</span>
+  <button class="topbar-toggle" aria-label="Open menu">☰</button>
+</div>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-logo">Edu<span>Bridge</span></div>
+    <nav class="sidebar-nav">
+      <a href="/student-dashboard.html" class="sidebar-link">📊 Dashboard</a>
+      <a href="/doubt-solver.html" class="sidebar-link">💬 Ask AI</a>
+      <a href="/practice.html" class="sidebar-link active">📝 Practice</a>
+      <a href="/analytics.html" class="sidebar-link">📈 Progress</a>
+      <a href="/student-dashboard.html#recommendations" class="sidebar-link">🎯 Recommendations</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="sidebar-avatar" id="sidebar-avatar">S</div>
+        <div>
+          <div class="sidebar-user-name" id="sidebar-user-name">Student</div>
+          <div class="sidebar-user-role" id="sidebar-user-role">Student</div>
+        </div>
+      </div>
+      <a href="#" id="logout-btn" class="sidebar-link mt-4">🚪 Log Out</a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="section-header">
+      <div>
+        <h2 class="mb-0" id="practice-title">Personalized Practice</h2>
+        <p class="mb-0 text-sm" id="practice-subtitle">Loading your recommended questions...</p>
+      </div>
+    </div>
+
+    <div id="setup-card" class="card">
+      <div class="flex gap-4" style="flex-wrap:wrap; align-items:flex-end;">
+        <div class="field mb-0" style="min-width:200px;">
+          <label for="topic-input">Topic</label>
+          <input type="text" id="topic-input" placeholder="e.g. Quadratic Equations" />
+        </div>
+        <div class="field mb-0" style="width:120px;">
+          <label for="count-input">Questions</label>
+          <input type="number" id="count-input" value="5" min="1" max="10" />
+        </div>
+        <button class="btn btn-accent" id="generate-btn">Generate Practice</button>
+      </div>
+    </div>
+
+    <div id="practice-area" class="mt-6"></div>
+  </main>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/practice.js"></script>
+</body>
+</html>
