@@ -8,6 +8,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
+from backend.middleware.force_english_middleware import ForceEnglishMiddleware
 
 from backend.config import settings
 from backend.database.database import Base, engine
@@ -29,6 +30,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Force English for incoming requests (helps LLM/backend responses remain English)
+app.add_middleware(ForceEnglishMiddleware)
 
 
 @app.on_event("startup")

@@ -26,7 +26,7 @@ const Api = {
   },
 
   async request(path, { method = "GET", body = null, auth = true } = {}) {
-    const headers = { "Content-Type": "application/json" };
+    const headers = { "Content-Type": "application/json", "Accept-Language": "en" };
     if (auth && this.token()) {
       headers["Authorization"] = `Bearer ${this.token()}`;
     }

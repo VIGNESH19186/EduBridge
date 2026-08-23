@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: edubridge-ai-backend
+    env: docker
+    repo: REPLACE_WITH_GIT_REPO_URL
+    branch: main
+    dockerfilePath: Dockerfile
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        value: REPLACE_WITH_DATABASE_URL
+      - key: AI_API_KEY
+        value: REPLACE_WITH_AI_KEY
+    healthCheckPath: /api/health
